@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+	<meta charset="utf-8">
+	<title>ShareMyVisits</title>
+
+	<style>
+		.libellule {
+			width: 60px;
+			height: 60px;
+			box-shadow: none;
+		}
+
+		.libellule2 {
+			width: 120px;
+			box-shadow: none;
+		}
+
+		#libellule2 {
+			position: absolute;
+			z-index: 9999;
+			left: 300px;
+			display: none;
+			top: 849px;
+		}
+
+		#fleche {
+			position: fixed;
+			cursor: pointer;
+			z-index: 9999;
+			opacity: 0.8;
+			right: 20px;
+			bottom: 20px;
+			display: block;
+		}
+
+		body {
+			color: black;
+			background: white;
+			padding: 0;
+			font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+			padding-bottom: 60px;
+			max-width: 1600px;
+		}
+
+		#slide {
+			width: 100%;
+			height: 500px;
+		}
+
+		#slider {
+			position: relative;
+			width: 100%;
+			margin: auto;
+			display: flex;
+			align-items: center;
+		}
+
+		#precedent,
+		#suivant {
+			cursor: pointer;
+			transition: opacity 0.3s ease;
+			opacity: 0;
+			position: absolute;
+			font-size: 100px;
+			color: rgba(220, 220, 220, 0.8);
+			background-color: rgba(0, 0, 0, 0.8);
+			padding: 10px;
+		}
+
+		#precedent {
+			left: 0;
+		}
+
+		#suivant {
+			right: 0;
+		}
+
+		#slider:hover #precedent,
+		#slider:hover #suivant {
+			opacity: 1;
+		}
+
+		table {
+			height: 100%;
+			width: 100%;
+			margin: 0;
+			padding: 0;
+		}
+
+		tr.bandeau {
+			height: 60px;
+			width: 50%;
+			z-index: 1;
+		}
+
+		td.titre {
+			background-color: blueviolet;
+			border-radius: 5px;
+			color: white;
+			font-size: 56px;
+			text-align: center;
+			width: 100%;
+		}
+
+		.logo {
+			height: 100px;
+			margin: 15px;
+		}
+
+		img {
+			box-shadow: 10px 10px 5px rgb(197, 197, 156);
+		}
+
+		.tdButton {
+			width: 100%;
+			text-align: left;
+		}
+
+		button {
+			border-radius: 0%;
+			height: 36px;
+			width: 200px;
+			color: green;
+			font-weight: bold;
+			box-shadow: 10px 10px 5px rgb(197, 197, 156);
+		}
+
+		button:hover {
+			background-color: green;
+			color: white;
+		}
+
+		p.bordeau {
+			color: #990033;
+		}
+
+		b.b {
+			color: #990033;
+		}
+
+		.v {
+			color: green;
+
+		}
+
+		p.footer {
+			position: fixed;
+			bottom: 0px;
+			width: 100%;
+			color: #990033;
+			font-weight: bold;
+			background-color: rgb(247, 247, 247);
+			margin: 0;
+			padding-bottom: 10px;
+			padding-top: 10px;
+			text-align: center;
+		}
+
+		img.pub {
+			width: 220px;
+			height: 120px;
+			display: flex;
+			margin-left: 30px;
+			margin-bottom: 20px;
+			border: 2px white solid;
+		}
+
+		img.pub:hover {
+			opacity: 0.5;
+			border: 2px green dashed;
+		}
+
+		p.green {
+			color: green;
+			width: 220px;
+			font-size: 20px;
+			margin-top: 0px;
+		}
+
+		td.pub {
+			vertical-align: top;
+		}
+
+		img {
+			box-shadow: 10px 10px 5px rgb(197, 197, 156);
+		}
+
+		td.profile {
+			vertical-align: top;
+			padding-right: 14px;
+			font-size: 30px;
+			padding-top: 14px;
+		}
+
+		td.profile a {
+			color: green;
+		}
+
+		span.bold {
+			font-weight: bold;
+			font-size: 20px;
+		}
+
+		span.left {
+			margin-left: 20px;
+		}
+	</style>
+	<script>
+		var numero = 0;
+
+		function ChangeSlide(sens) {
+			numero = numero + sens;
+			if (numero < 0)
+				numero = 7;
+			if (numero > 7)
+				numero = 1;
+			document.getElementById("slide").src = "./images/slide" + numero + ".png";
+		}
+
+		setInterval("ChangeSlide(1)", 4000);
+
+		function flechetop() {
+			window.scrollTo(0, 0);
+		}
+		function geo() {
+			document.getElementById("libellule2").style.display = 'block';
+			setTimeout(function () { document.getElementById("libellule2").style.display = 'none'; }, 5000);
+		}
+	</script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+
+<body>
+	<table>
+		<tr>
+			<td>
+				<a href="./index.html"><img class="logo" src="./images/ShareBig.png"></a>
+
+			</td>
+			<td class="tdButton">
+				<p class="bordeau"><a href="Visites.html"><button onClick="myFunction('s1')" id="s1"
+							class="cadre">Visites</button></a><span class="bold left">Redécouvrez le monde !</span></p>
+				<p class="bordeau"><a href="Ajouter.html"><button onClick="myFunction('s2')" id="s2"
+							class="cadre">Ajouter</button></a>
+					<span class=" left">Partagez! C'est un guide interactif français de vos visites de sites
+						rémarquables et méconues:
+						nature, histoire, culture et terroir.</span>
+				</p>
+			</td>
+			<td class="profile">
+				<a href="./Connexion.html"><i class="fas fa-user"></i></a>
+			</td>
+		</tr>
+	</table>
+	<table>
+		<tr>
+			<td>
+				<div id="slider">
+					<img src="./images/slide1.png" id="slide">
+					<div id="precedent" onclick="ChangeSlide(-1)"><i class="fas fa-angle-left"></i></div>
+					<div id="suivant" onclick="ChangeSlide(1)"><i class="fas fa-angle-right"></i></div>
+				</div>
+			</td>
+			<td class="pub">
+				<a href="https://www.airfrance.fr"><img class="pub" src="./images/airfrance.PNG"></a>
+				<br>
+				<a href="https://www.eurolines.com"><img class="pub" src="./images/eurolines.PNG"></a>
+				<br>
+				<a href="./sncf.html"><img class="pub" src="./images/sncf.PNG"></a>
+			</td>
+		</tr>
+	</table>
+	<br>
+	<p><b class="b">E-tourisme :</b></p>
+	<p>Le <b class="v">tourisme en ligne</b>, <b class="v">cybertourisme</b> ou <b class="v">e-tourisme</b>
+		d&eacute;signe les activit&eacute;s du secteur du <a href="https://fr.wikipedia.org/wiki/Tourisme"
+			title="Tourisme">tourisme</a> sur <a href="https://fr.wikipedia.org/wiki/Internet"
+			title="Internet">Internet</a>. Pour les clients, le tourisme en ligne offre des moyens de pr&eacute;parer,
+		d&#39;organiser et de r&eacute;server ses voyages via <a href="https://fr.wikipedia.org/wiki/Internet"
+			title="Internet">Internet</a> : identification de la destination, achat du transport, &eacute;laboration
+		d&#39;un itin&eacute;raire, r&eacute;servation d&#39;un h&eacute;bergement, &eacute;change d&#39;informations
+		avec les autres internautes.</p>
+	<p>Plus en d&eacute;tail, apparu en 1998, le tourisme en ligne est un mode de promotion et de r&eacute;servation
+		incontournable dans les secteurs du tourisme et du <a href="https://fr.wikipedia.org/wiki/Voyage"
+			title="Voyage">voyage</a>. Les ann&eacute;es 2000 sont celles de l&#39;ADSL, les ann&eacute;es 2010 ont vu
+		se d&eacute;velopper le sans fil via les smartphones qui a renforc&eacute; la d&eacute;sinterm&eacute;diation
+		entre les diff&eacute;rents acteurs.</p>
+	<p><b class="b">Cartographie et g&eacute;olocalisation <span onclick="geo()">*</span>:</b><br>
+		La cartographie joue un r&ocirc;le important dans le secteur du tourisme en ligne puisque les cartes, outil
+		indispensable &agrave; la pr&eacute;paration d&#39;un voyage, deviennent num&eacute;riques et associ&eacute;es
+		&agrave; d&#39;autres services. Dans une certaine mesure, la cartographie en ligne est une probl&eacute;matique
+		du tourisme en ligne d&egrave;s lors que celle-ci est associ&eacute;e &agrave; de nouveaux usages de
+		consultation de l&#39;information touristique. Les acteurs du tourisme d&eacute;veloppent ainsi des couches
+		additionnelles qui permettent de positionner des points d&#39;int&eacute;r&ecirc;t sur une carte. Il peut
+		s&#39;agir d&#39;itin&eacute;raires, d&#39;h&eacute;bergement, d&#39;attractions touristiques ou culturelles...
+	</p>
+	<p><b class="b">Acteurs du secteur touristique :</b></p>
+	<p>Le secteur du tourisme en ligne rassemble aujourd&#39;hui de nombreux acteurs du secteur touristique ainsi que
+		des nouveaux entrants <a class="gmail-mw-redirect" href="https://fr.wikipedia.org/wiki/Pure_play"
+			title="Pure play">pure play</a> :</p>
+	<ul>
+		<li>Entreprises touristiques&nbsp;: <a class="gmail-mw-redirect"
+				href="https://fr.wikipedia.org/wiki/Agence_de_voyage" title="Agence de voyage">agence de voyage</a> en
+			ligne, prestataire h&ocirc;teliers, <a href="https://fr.wikipedia.org/wiki/Compagnie_a%C3%A9rienne"
+				title="Compagnie aérienne">compagnie a&eacute;rienne</a>, ferroviaire ou de navigation ;</li>
+		<li>&Eacute;dition et publication&nbsp;: <a class="gmail-mw-redirect"
+				href="https://fr.wikipedia.org/wiki/Guide_de_voyage" title="Guide de voyage">guide de voyage</a>,
+			magazine, blogs de voyage (les &laquo;&nbsp;infom&eacute;diaires&nbsp;&raquo;, sites internet
+			sp&eacute;cialis&eacute;s dans les informations sur le voyage), site d&#39;avis de voyageurs (<a
+				class="gmail-mw-redirect" href="https://fr.wikipedia.org/wiki/Tripadvisor"
+				title="Tripadvisor">Tripadvisor</a>, Vinivi, Holidaycheck, Zoover, <a
+				href="https://fr.wikipedia.org/wiki/Trivago" title="Trivago">Trivago</a>, <a
+				href="https://fr.wikipedia.org/wiki/Routard" title="Routard">Routard</a>, etc.) et de plus en plus
+			souvent les <b class="v">r&eacute;seaux sociaux</b> sur lesquels des groupes ou pages d&eacute;di&eacute;es
+			sont cr&eacute;&eacute;s et recueillent des commentaires des membres ;</li>
+		<li>Technologies&nbsp;: outils de planification des itin&eacute;raires, <a
+				href="https://fr.wikipedia.org/wiki/Comparateur_de_prix" title="Comparateur de prix">comparateur de
+				prix</a>, <a href="https://fr.wikipedia.org/wiki/Agr%C3%A9gateur"
+				title="Agrégateur">agr&eacute;gateur</a>, <a href="https://fr.wikipedia.org/wiki/Moteur_de_recherche"
+				title="Moteur de recherche">moteur de recherche</a> et <a
+				href="https://fr.wikipedia.org/wiki/M%C3%A9tamoteur" title="Métamoteur">m&eacute;tamoteur</a> qui met en
+			relation de multiples produits touristiques, gestion de la <a
+				href="https://fr.wikipedia.org/wiki/E-r%C3%A9putation" title="E-réputation">r&eacute;putation
+				num&eacute;rique</a> ;</li>
+		<li>Logiciels ou extensions de logiciels&nbsp;: ils viennent compl&eacute;ter les fonctions de bases des PMS
+			h&ocirc;teliers pour en proposer d&#39;autres comme la gestion des canaux (Xotelia, AvailPro, Bookassist,
+			Fastbooking, Reservit, Micros/Siteminder, etc.) ;</li>
+		<li>Acteurs institutionnels&nbsp;: <a href="https://fr.wikipedia.org/wiki/Office_de_tourisme"
+				title="Office de tourisme">office de tourisme</a>, <a class="gmail-mw-redirect"
+				href="https://fr.wikipedia.org/wiki/Comit%C3%A9_r%C3%A9gional_de_tourisme"
+				title="Comité régional de tourisme">CRT</a>, CDT, Minist&egrave;re, observatoires.</li>
+	</ul>
+	<div><b class="b">Sites qui f&eacute;d&egrave;rent de communaut&eacute;s de voyageurs : </b></div>
+	<div>Un certain nombre de sites Web 2.0 sont apparus dans le but de f&eacute;d&eacute;rer des communaut&eacute;s de
+		voyageurs : CouchSurfing, VoyageForum, Uniterre... La pr&eacute;sence des blogs, forums et carnets de voyage,
+		g&eacute;n&eacute;rant de la production de contenu par les internautes, influe sur la pr&eacute;paration du
+		voyage et les usages li&eacute;es &agrave; celle-ci notamment via l&#39;&eacute;change d&#39;avis et de
+		conseils. 85 % des internautes d&eacute;clarent consulter les avis des autres internautes afin de pr&eacute;
+		parer leur voyage. </div>
+	<div>Dans d&#39;autres cas, les internautes cherchent &agrave; se mettre en relation directement avec les
+		communaut&eacute;s locales sans passer par les acteurs classiques du tourisme, faisant appel par exemple au
+		r&eacute;seau international des greeters, mouvement de tourisme participatif, qui r&eacute;invente les rapports
+		entre les visiteurs et les populations visit&eacute;es dans un partage non marchand, dont l&#39;expansion est
+		essentiellement due aux possibilit&eacute;s de mise en relation offertes par internet.</div>
+	<div>L&#39;apparition des guides de voyage &eacute;lectroniques a engendr&eacute; <b class="v">deux courants en
+			termes de contenu </b>: le contenu provenant &quot;d&#39;experts&quot; (&eacute;ditions en ligne des guides
+		papier traditionnels ou sp&eacute;cialistes du voyage) et le contenu g&eacute;n&eacute;r&eacute; par les
+		utilisateurs (notes, avis, articles).</div>
+	<p>De nombreux <b class="v"> salons et conf&eacute;rences</b> sont maintenant d&eacute;di&eacute;s au tourisme en
+		ligne parmi eux, on peut citer&nbsp;:</p>
+	<ul>
+		<li>Rencontres du eTourisme institutionnel &agrave; Pau en octobre ;</li>
+		<li>Voyage en multim&eacute;dia (VEM) &agrave; Saint-Rapha&euml;l en f&eacute;vrier ;</li>
+		<li>Tourism Professionals meeting (TPM) &agrave; <a href="https://fr.wikipedia.org/wiki/Sierre"
+				title="Sierre">Sierre</a> (<a class="gmail-mw-redirect" href="https://fr.wikipedia.org/wiki/Valais"
+				title="Valais">Valais</a>)- Suisse en d&eacute;cembre ;</li>
+		<li>Conf&eacute;rence Guy Raffour en Juin (Paris) ;</li>
+		<li>D&#39;autres conf&eacute;rences sont &eacute;galement organis&eacute;es par Phocuswright et EyesforTravel en
+			marge des salons ITB &agrave; Berlin en mars et au WTM &agrave; Londres ainsi qu&#39;ENTER une
+			conf&eacute;rence annuelle propos&eacute;e par IFITT toutes &eacute;tant en anglais.</li>
+	</ul>
+	</p>
+	<div id="fleche" onclick="flechetop()">
+		<img class="libellule" src="./images/share.PNG" alt="Veuillez cliquer, svp">
+	</div>
+	<div id="libellule2">
+		<img class="libellule2" src="./images/libellule2.PNG">
+	</div>
+	<br>
+	<p class="footer">Copyright 2021 <a href="./Contact.html">Tati Chouteau</a> - Merci à Zakariae KASSIMI / <span
+			class="v">AFPA</span></p>
+
+</body>
+
+</html>

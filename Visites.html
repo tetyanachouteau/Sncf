@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Visites</title>
+	<style>
+		.libellule {
+			width: 60px;
+			height: 60px;
+			box-shadow: none;
+		}
+
+		.v {
+			color: green;
+
+		}
+
+		#fleche {
+			position: fixed;
+			cursor: pointer;
+			z-index: 9999;
+			opacity: 0.8;
+			right: 20px;
+			bottom: 20px;
+			display: block;
+		}
+
+		img {
+			width: 100px;
+			height: 100px;
+
+		}
+
+		article {
+			border: 1px green dotted;
+			padding: 5px;
+		}
+
+		.grande {
+			width: 415px;
+			height: 400px;
+		}
+
+
+		#visites {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			grid-gap: 10px;
+			min-height: 100%;
+		}
+
+		body {
+			color: black;
+			background: white;
+			padding: 0;
+			font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+			height: 100%;
+			padding-bottom: 60px;
+			max-width: 1600px;
+		}
+
+		h4 {
+			text-align: center;
+		}
+
+		tr.bandeau {
+			height: 60px;
+			width: 50%;
+			z-index: 1;
+		}
+
+		td.titre {
+			background-color: blueviolet;
+			border-radius: 5px;
+			color: white;
+			font-size: 56px;
+			text-align: center;
+			width: 100%;
+		}
+
+		.logo {
+			height: 100px;
+			width: auto;
+			margin: 15px;
+			box-shadow: 10px 10px 5px rgb(197, 197, 156);
+		}
+
+		.tdButton {
+			width: 100%;
+			text-align: left;
+		}
+
+		button {
+			border-radius: 0%;
+			height: 36px;
+			width: 200px;
+			color: green;
+			font-weight: bold;
+			box-shadow: 10px 10px 5px rgb(197, 197, 156);
+		}
+
+		button:hover {
+			background-color: green;
+			color: white;
+		}
+
+		p.bordeau {
+			color: #990033;
+		}
+
+		p.footer {
+			position: fixed;
+			bottom: 0px;
+			width: 100%;
+			color: #990033;
+			font-weight: bold;
+			background-color: rgb(247, 247, 247);
+			margin: 0;
+			padding-bottom: 10px;
+			padding-top: 10px;
+			text-align: center;
+	
+		}
+
+
+		p.green {
+			color: green;
+			width: 220px;
+			font-size: 20px;
+			margin-top: 0px;
+		}
+
+		td.pub {
+			vertical-align: top;
+		}
+
+		td.profile {
+			vertical-align: top;
+			padding-right: 14px;
+			font-size: 30px;
+			padding-top: 14px;
+		}
+
+		td.profile a {
+			color: green;
+		}
+
+		span.bold {
+			font-weight: bold;
+			font-size: 20px;
+		}
+
+		span.left {
+			margin-left: 20px;
+		}
+	</style>
+	<script>
+		const visites = {
+			"items": [{
+				"id": "A",
+				"title": "Voyage à Santa Cruz de Ténérife, Fuerteventura et Îles Canaries",
+				"images": [
+					"./images/A1.png",
+					"./images/A2.png",
+					"./images/A3.png",
+					"./images/A4.png",
+				],
+				"avis": "Fuerteventura est la deuxième plus grande île des Canaries. C’est ici qu’il faut venir si vous êtes fan de glisse : kitesurf, planche à voile et surf sont au rendez-vous. Les plages y sont sublimes. Préférez celle de Costa Calma et Caleta de Fuste, plus paisibles avec les enfants."
+			}, {
+				"id": "B",
+				"title": "Voyage en Brétagne",
+				"images": [
+					"./images/B1.png",
+					"./images/B2.png",
+					"./images/B3.png",
+					"./images/B4.png",
+				],
+				"avis": "La Bretagne, une région située à l’extrême ouest de la France, est une péninsule vallonnée qui s’avance dans l’océan Atlantique. Sa côte sauvage s’étend sur des kilomètres : on y trouve des stations balnéaires comme la ville chic de Dinard ou la ville fortifiée de Saint-Malo, construite sur la Manche. La côte de granit rose est un lieu convoité pour les teintes uniques que prennent le sable et les roches. La Bretagne dispose également d’un grand nombre de menhirs (sorte de mégalithe) datant de la préhistoire."
+			},
+			{
+				"id": "P",
+				"title": "Promenades à Paris",
+				"images": [
+					"./images/P1.png",
+					"./images/P2.png",
+					"./images/P3.png",
+					"./images/P4.png",
+				],
+				"avis": "Activité très sympa à faire qui permet de s'évader pendant une heure. Le chauffeur est très sympa et il connait pleins d'anecdotes que ce soit sur la voiture que sur les monuments de Paris. Excellent !"
+			}, {
+				"id": "R",
+				"title": "Voyage en Bourgogne",
+				"images": [
+					"./images/R1.png",
+					"./images/R2.png",
+					"./images/R3.png",
+					"./images/R4.png",
+				],
+				"avis": "Bon resto (mais un peu cher je trouve) à Dijon: la dame d'Aquitaine. Pour les domaines viticoles le choix est large mais ma préférence tourne autour de Beaune, Pommard et Nuits-St-Georges.Pour la balade il y a de très belles campagnes dans le Nivernais, la forêt de Planoise en Saône-et-Loire, la Bresse mais surtout.... le Morvan (à cheval sur les quatre départements)."
+			}, {
+				"id": "F",
+				"title": "Voyage à Californie",
+				"images": [
+					"./images/F1.png",
+					"./images/F2.png",
+					"./images/F3.png",
+					"./images/F4.png",
+				],
+				"avis": "Sur la route entre Death Valley et Sequoïa NP nous avons fait une halte sur le Trail of the 100 Giants. C'est là que nous avons le mieux apprécié les Sequoïas. Nous étions seuls dans la forêts en tête à tête avec tous ces géants debout ou couchés, mais en liberté, eux et nous. La dimension des arbres et de la forêt dans cet espace bien plus nature que le NP a été un bien meilleur moment."
+			}
+			]
+		};
+
+		function affiche(lettre, numImage) {
+			var grande = document.getElementById("grande" + lettre);
+			grande.setAttribute("src", "./images/" + lettre + numImage + ".png");
+
+			var prochaineImage = numImage + 1;
+			if (prochaineImage > 4)
+				prochaineImage = 1;
+			grande.setAttribute("onclick", "affiche('" + lettre + "'," + prochaineImage + ")");
+
+			for (i = 1; i <= 4; i++) {
+				var petitN = document.getElementById("petite" + i + lettre);
+				if (i == numImage)
+					petitN.setAttribute("style", "border: 2px solid red");
+				else
+					petitN.setAttribute("style", "");
+			}
+			var petitN = document.getElementById("petite" + numImage + lettre);
+			petitN.setAttribute("style", "border: 2px solid red");
+		}
+
+		function loadVisite() {
+			var result = "";
+			for (visiteIndice in visites.items) {
+				visite = visites.items[visiteIndice];
+				result += "<article><p>" + visite.title + "</p>" +
+					"<table>" +
+					"<tr>" +
+					"<td colspan='4'>" +
+					"<img src='" + visite.images[0] + "' class='grande' id='grande" + visite.id + "' onclick='affiche(\"" + visite.id + "\",2)'>" +
+					"</td>" +
+					"</tr>" +
+					"<tr>" +
+					"<td>" +
+					"<img src='" + visite.images[0] + "' id='petite1" + visite.id + "'' onclick='affiche(\"" + visite.id + "\",1)' style='border: 2px solid red'>" +
+					"</td>" +
+					"<td>" +
+					"<img src='" + visite.images[1] + "' id='petite2" + visite.id + "' onclick='affiche(\"" + visite.id + "\",2)' >" +
+					"</td>" +
+					"<td>" +
+					"<img src='" + visite.images[2] + "' id='petite3" + visite.id + "' onclick='affiche(\"" + visite.id + "\",3)' >" +
+					"</td>" +
+					"<td>" +
+					"<img src='" + visite.images[3] + "' id='petite4" + visite.id + "' onclick='affiche(\"" + visite.id + "\",4)' >" +
+					"</td>" +
+					"</table>" +
+					"<p>Avis : </p>" +
+					"<p>" + visite.avis + "</p></article>";
+			}
+
+			document.getElementById("visites").innerHTML = result;
+		}
+
+		function flechetop() {
+			window.scrollTo(0, 0);
+		}
+	</script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+
+<body>
+	<table>
+		<tr>
+			<td>
+				<a href="./index.html"><img class="logo" src="./images/ShareBig.png"></a>
+
+			</td>
+			<td class="tdButton">
+				<p class="bordeau"><a href="Visites.html"><button onClick="myFunction('s1')" id="s1"
+							class="cadre">Visites</button></a><span class="bold left">Redécouvrez le monde !</span></p>
+				<p class="bordeau"><a href="Ajouter.html"><button onClick="myFunction('s2')" id="s2"
+							class="cadre">Ajouter</button></a>
+					<span class=" left">Partagez! C'est un guide interactif français de vos visites de sites
+						rémarquables et méconues: nature, histoire, culture et terroir.</span>
+				</p>
+			</td>
+			<td class="profile">
+				<a href="./Connexion.html"><i class="fas fa-user"></i></a>
+			</td>
+		</tr>
+	</table>
+	</tr>
+	</table>
+	<h4> Ci-joint vos visites et souvenires :</h4>
+	<div id="visites"></div>
+	<div id="fleche" onclick="flechetop()">
+		<img class="libellule" src="./images/share.PNG" alt="Veuillez cliquer, svp">
+	</div>
+	<p class="footer">Copyright 2021 <a href="./Contact.html">Tati Chouteau</a> - Merci à Zakariae KASSIMI / <span
+			class="v">AFPA</span></p>
+	<script>
+		loadVisite();
+	</script>
+
+</body>
+
+</html>

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Contact</title>
+	<style>
+		.libellule {
+			width: 60px;
+			height: 60px;
+			box-shadow: none;
+		}
+
+		.v {
+			color: green;
+
+		}
+
+		#fleche {
+			position: fixed;
+			cursor: pointer;
+			z-index: 9999;
+			opacity: 0.8;
+			right: 20px;
+			bottom: 20px;
+			display: block;
+		}
+
+		body {
+			color: black;
+			background: white;
+			margin: 0;
+			padding: 0;
+			font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+			text-align: center;
+			padding-bottom: 60px;
+			max-width: 1600px;
+		}
+
+		table {
+			width: 100%;
+			margin: 0;
+			padding: 0;
+		}
+
+		table.form {
+			width: 250px;
+			border: 0px;
+			margin-right: auto;
+			margin-left: auto;
+		}
+
+		tr.bandeau {
+			height: 60px;
+			width: 50%;
+			z-index: 1;
+		}
+
+		td.titre {
+			background-color: blueviolet;
+			border-radius: 5px;
+			color: white;
+			font-size: 56px;
+			text-align: center;
+			width: 100%;
+		}
+
+		.logo {
+			height: 100px;
+			margin: 15px;
+			width: auto;
+		}
+
+		.tdButton {
+			width: 100%;
+			text-align: left;
+		}
+
+		button {
+			border-radius: 0%;
+			height: 36px;
+			width: 200px;
+			color: green;
+			font-weight: bold;
+			box-shadow: 10px 10px 5px rgb(197, 197, 156);
+		}
+
+		button:hover {
+			background-color: green;
+			color: white;
+		}
+
+		p.bordeau {
+			color: #990033;
+		}
+
+
+		p.footer {
+			position: fixed;
+			bottom: 0px;
+			width: 100%;
+			color: #990033;
+			font-weight: bold;
+			background-color: rgb(247, 247, 247);
+			margin: 0;
+			padding-bottom: 10px;
+			padding-top: 10px;
+		}
+
+		p.green {
+			color: green;
+			width: 220px;
+			font-size: 20px;
+			margin-top: 0px;
+		}
+
+		td.pub {
+			vertical-align: top;
+		}
+
+		img {
+			box-shadow: 10px 10px 5px rgb(197, 197, 156);
+		}
+
+		td.profile {
+			vertical-align: top;
+			padding-right: 14px;
+			font-size: 30px;
+			padding-top: 14px;
+		}
+
+		td.profile a {
+			color: green;
+		}
+
+		span.bold {
+			font-weight: bold;
+			font-size: 20px;
+		}
+
+		span.left {
+			margin-left: 20px;
+		}
+
+		form {
+			text-align: left;
+			margin-left: auto;
+			margin-right: auto;
+			width: 800px;
+			background-color: white;
+			opacity: 0.8;
+			padding: 20px;
+		}
+
+		.label {
+			width: 350px;
+			display: inline-block;
+		}
+
+		.input {
+			width: 300px;
+			display: inline-block;
+		}
+
+		textarea {
+			width: 655px;
+			height: 400px;
+		}
+	</style>
+	<script>function flechetop() {
+			window.scrollTo(0, 0);
+		}</script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+<body>
+
+	<table>
+		<tr>
+			<td>
+				<a href="./index.html"><img class="logo" src="./images/ShareBig.png"></a>
+
+			</td>
+			<td class="tdButton">
+				<p class="bordeau"><a href="Visites.html"><button onClick="myFunction('s1')" id="s1"
+							class="cadre">Visites</button></a><span class="bold left">Redécouvrez le monde !</span></p>
+				<p class="bordeau"><a href="Ajouter.html"><button onClick="myFunction('s2')" id="s2"
+							class="cadre">Ajouter</button></a>
+					<span class=" left">Partagez! C'est un guide interactif français de vos visites de sites
+						rémarquables et méconues:
+						nature, histoire, culture et terroir.</span>
+				</p>
+			</td>
+			<td class="profile">
+				<a href="./Connexion.html"><i class="fas fa-user"></i></a>
+			</td>
+		</tr>
+	</table>
+	<table border="0">
+		<tr>
+
+			<td>
+				<h4><i>Share my Visits</i> est à votre écoute !</h4>
+				<p>Si vous souhaitez un de nos cadeaux disponibles, il suffit de nous contacter par <a
+						href="mailto:teti.chouteau@gmail.com">e-mail</a></p>
+
+				<img src="./images/tasse.jpg" width="400px"> <img src="./images/stylo.jpg" width="400px"><br>
+
+				<p> Je m'appelle Tati et je vous propose mes prestations IT: </p>
+				<br>
+				<img src="images/smv.png" width="400px">
+
+
+				<p><b>Téléphone : </b>06 83276981</p>
+				<p><b>Horaire : </b>06:00 - 20:00</p>
+				<p> Ci-joint mon CV et je vous presente ce prototype, réalisé en HTML, CCS, JS. </p>
+
+				<h3>Contactez moi, notamment, par le formulaire du bas, si vous souhaitez aller plus vite : </h3>
+
+				<form>
+					<p>
+						<label class="label" for="Prenom">Prenom :</label>
+						<input class="input" type="text" name="Prenom" id="Prenom" required>
+						<span id="aidePrenom"></span>
+					</p>
+					<p>
+						<label class="label" for="Nom">Nom :</label>
+						<input class="input" type="text" name="Nom" id="Nom" required>
+						<span id="aideNom"></span>
+					</p>
+					<p>
+						<label class="label" for="tel">Téléphone :</label>
+						<input class="input" type="text" name="tel" id="tel" required>
+						<span id="aideTel"></span>
+					</p>
+					<p>
+						<label class="label" for="raison">Raison :</label>
+						<select class="input" name="raison" id="raison" required>
+							<option>Questions</option>
+							<option>Problème</option>
+							<option>Avis</option>
+							<option>Amitié</option>
+							<option>Association</option>
+						</select>
+						<span id="aideRaison"></span>
+					</p>
+					<p>
+						<textarea>Votre message :</textarea><br>
+					</p>
+					<input type="submit" value="Envoyer">
+					<input type="button" value="Annuler">
+				</form>
+			</td>
+		</tr>
+	</table>
+	<div id="fleche" onclick="flechetop()">
+		<img class="libellule" src="./images/share.PNG" alt="Veuillez cliquer, svp">
+	</div>
+</body>
+<br>
+<p class="footer">Copyright 2021 <a href="./Contact.html">Tati Chouteau</a> - Merci à Zakariae KASSIMI / <span
+		class="v">AFPA</span></p>
+<html>

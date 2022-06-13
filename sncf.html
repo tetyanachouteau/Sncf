@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <title>SNCF</title>
+  <style>
+    .libellule {
+      width: 60px;
+      height: 60px;
+      box-shadow: none;
+    }
+
+    #fleche {
+      position: fixed;
+      cursor: pointer;
+      z-index: 9999;
+      opacity: 0.8;
+      right: 20px;
+      bottom: 20px;
+      display: block;
+    }
+
+    body {
+      color: black;
+      background: white;
+      margin: 0;
+      padding: 0;
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      padding-bottom: 60px;
+      max-width: 1600px;
+    }
+
+    tr.bandeau {
+      height: 60px;
+      width: 100%;
+      position: fixed;
+      z-index: 1;
+    }
+
+    td.titre {
+      background-color: blueviolet;
+      border-radius: 5px;
+      color: white;
+      font-size: 56px;
+      text-align: center;
+      width: 100%;
+    }
+
+    i.panier {
+      text-align: center;
+      background: #d8318d;
+      border-radius: 5px;
+      color: white;
+      padding: 5px;
+    }
+
+    td.imgFond {
+      background-image: url("images/tgv.jpeg");
+      background-size: cover;
+      background-position-y: center;
+      height: 400px;
+    }
+
+    div.section {
+      text-align: center;
+      padding-top: 50px;
+      color: gray;
+      background-color: white;
+      height: 100px;
+      font-size: 40px;
+      opacity: 0.8;
+    }
+
+    table {
+      height: 100%;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Trouvé sur internet permet de faire automatiquement
+    un tableau de 3 cases et d'autant de ligne que nécessaire
+    On a juste besoin d'avoir une balise <article> répértée
+    Autant de fois qu'il y a des produits*/
+    .products-center {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 10px;
+    }
+
+    img.product-img {
+      width: 400px;
+      height: 250px;
+    }
+
+    img.product-img-tiny {
+      width: 40px;
+      height: 25px;
+      vertical-align: middle;
+    }
+
+    .addCart {
+      position: relative;
+      top: 70%;
+      right: 0;
+      background: #d8318d;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+      padding: 10px;
+    }
+
+    .addCart:hover {
+      color: white;
+    }
+
+    div.cart {
+      height: 50%;
+      width: 70%;
+      visibility: hidden;
+      position: fixed;
+      z-index: 1;
+      right: 0;
+      top: 0;
+      background-color: white;
+      opacity: 0.9;
+      margin-top: 40px;
+    }
+
+    span.closeCart {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      font-size: 30px;
+      color: violet;
+      cursor: pointer;
+      height: 50px;
+    }
+
+    ul.cartItems {
+      list-style-type: none;
+      margin-top: 60px;
+    }
+
+    span.price {
+      position: absolute;
+      right: 80px;
+      font-size: 20px;
+      ;
+    }
+
+    span.product-trash {
+      position: absolute;
+      right: 45px;
+    }
+
+    span.total {
+      position: absolute;
+      right: 40px;
+      font-size: 2em;
+      color: darkgoldenrod;
+    }
+
+    span.arrow {
+      position: absolute;
+      right: 200px;
+    }
+
+    logo {
+      height: 50%;
+      width: 70%;
+      visibility: hidden;
+      position: fixed;
+      z-index: 1;
+      right: 0;
+      top: 0;
+      background-color: white;
+      opacity: 0.9;
+      margin-top: 40px;
+    }
+
+    p.footer {
+      position: fixed;
+      bottom: 0px;
+      width: 100%;
+      color: #990033;
+      font-weight: bold;
+      background-color: rgb(247, 247, 247);
+      margin: 0;
+      padding-bottom: 10px;
+      padding-top: 10px;
+      text-align: center;
+
+    }
+
+    td.profile {
+      vertical-align: top;
+      padding-right: 14px;
+      font-size: 30px;
+      padding-top: 14px;
+    }
+
+    td.profile a {
+      color: green;
+    }
+
+    .tdButton {
+      width: 100%;
+      text-align: left;
+    }
+
+    button {
+      border-radius: 0%;
+      height: 36px;
+      width: 200px;
+      color: green;
+      font-weight: bold;
+      box-shadow: 10px 10px 5px rgb(197, 197, 156);
+    }
+
+    button:hover {
+      background-color: green;
+      color: white;
+    }
+
+    p.bordeau {
+      color: #990033;
+    }
+
+    .logo {
+      height: 100px;
+      margin: 15px;
+      box-shadow: 10px 10px 5px rgb(197, 197, 156);
+    }
+
+    span.bold {
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    span.left {
+      margin-left: 20px;
+    }
+
+    .v {
+      color: green;
+
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <nav>
+        <a href="./index.html"><img class="logo" src="./images/ShareBig.png"></a>
+
+      </td>
+      <td class="tdButton">
+        <p class="bordeau"><a href="Visites.html"><button onClick="myFunction('s1')" id="s1"
+              class="cadre">Visites</button></a><span class="bold left">Redécouvrez le monde !</span></p>
+        <p class="bordeau"><a href="Ajouter.html"><button onClick="myFunction('s2')" id="s2"
+              class="cadre">Ajouter</button></a>
+    </nav>
+          <span class=" left">Partagez! C'est un guide interactif français de vos visites de sites rémarquables et
+            méconues:
+            nature, histoire, culture et terroir.</span>
+        </p>
+        <a class="profile" href="./Connexion.html"><i class="fas fa-user"></i></a><i class="fas fa-cart-plus panier"
+        onclick="showCart()" id="cartCount">0</i>
+</header>
+    
+  <table>
+    <tr>
+      <td class="imgFond" colspan="2">
+        <div class="section">Nos destinations</div>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <div class="products-center" id="products">
+        </div>
+      </td>
+    </tr>
+  </table>
+  <div class="cart" id="cart">
+    <span class="closeCart" onclick="hideCart()">&times;</span>
+    <ul id="cartItems" class="cartItems">
+    </ul>
+    <span class="total">TOTAL : <i class="fas fa-coins"></i> <span id="totalPrice">0</span>€</span>
+  </div>
+  <script>
+    const productsDOM = document.getElementById("products");
+    const cartCountDOM = document.getElementById("cartCount");
+    const cartItemsDOM = document.getElementById("cartItems");
+    const totalPriceDOM = document.getElementById("totalPrice");
+
+    //Json de produits
+    // decription d'objet
+    // sous forme de clé valeur
+    const products = {
+      "items": [{
+        "id": "1",
+        "title": "Paris - Tours",
+        "price": 50.99,
+        "image": "./images/product-1.jpeg"
+      },
+      {
+        "id": "2",
+        "title": "Paris - Bruxelles",
+        "price": 120.99,
+        "image": "./images/product-2.jpeg"
+      },
+      {
+        "id": "3",
+        "title": "Paris - Marseille",
+        "price": 125.99,
+        "image": "./images/product-3.jpeg"
+      },
+      {
+        "id": "4",
+        "title": "Paris - Metz",
+        "price": 22.99,
+        "image": "./images/product-4.jpeg"
+      },
+      {
+        "id": "5",
+        "title": "Paris - Dijon",
+        "price": 30.99,
+        "image": "./images/product-5.jpeg"
+      },
+      {
+        "id": "6",
+        "title": "Paris - Limoge",
+        "price": 42.99,
+        "image": "./images/product-6.jpeg"
+      },
+      {
+        "id": "7",
+        "title": "Paris - Brest",
+        "price": 145.99,
+        "image": "./images/product-7.jpeg"
+      },
+      {
+        "id": "8",
+        "title": "Paris - Rouen",
+        "price": 33.99,
+        "image": "./images/product-8.jpeg"
+      },
+      {
+        "id": "9",
+        "title": "Paris - Kyiv",
+        "price": 453.00,
+        "image": "./images/product-9.jpeg"
+      }
+      ]
+    };
+
+    // tableau qui stocke le nombre de produit.id dans le panier
+    let cart = [];
+
+    function addCart(id) {
+      if (cart[id]) {
+        cart[id]++;
+      } else {
+        cart[id] = 1;
+      }
+
+      computeCart();
+    }
+
+    function computeCart() {
+      var count = 0;
+
+      for (id in cart) {
+        count += cart[id];
+      }
+
+      cartCountDOM.textContent = count;
+
+      var ligne = "";
+      var total = 0;
+
+      // parcours du json
+      // on récupé les indices du tableau items avec in
+      // c'est comme un for (i=0,...)
+      // productIndice est un numéro
+      for (productIndice in products.items) {
+        product = products.items[productIndice];
+        // cart = panier
+        if (cart[product.id]) {
+
+          // pour avoir deux chiffre après la virgule je multiple par 100, arrondi et divise par 100
+          var prixItem = Math.floor(product.price * cart[product.id] * 100) / 100;
+          total += prixItem;
+
+          // HTML en string pour l'ajouter après à la div avec css grid pour que ca s'affiche
+          ligne += "<article>" +
+            "<img src='" + product.image + "' alt='product' class='product-img-tiny'/>" +
+            "<span>" + cart[product.id] + " " + product.title + "</span>" +
+            "<span> à " + product.price + "€</span>" +
+            "<span class='arrow'><i class='fas fa-arrow-circle-right'></i></span>" +
+            "<span class='price'>" + prixItem + "€</span>" +
+            "<span class='product-trash' onclick='deleteTodo(" + product.id + ")'>" +
+            "  <i class='fas fa-trash-alt'></i>" +
+            "</span>" +
+            "</article>";
+        }
+      }
+
+      cartItemsDOM.innerHTML = ligne;
+      totalPriceDOM.innerText = Math.floor(total * 100) / 100;
+    }
+
+    function deleteTodo(id) {
+      cart[id] = null;
+
+      computeCart();
+    }
+
+    function showCart() {
+      var cart = document.getElementById("cart");
+      cart.style.visibility = "visible";
+    }
+
+    function hideCart() {
+      var cart = document.getElementById("cart");
+      cart.style.visibility = "hidden";
+    }
+
+    function loadArticle() {
+      var result = "";
+      for (productIndice in products.items) {
+        product = products.items[productIndice];
+        result += "<article class='product'>" +
+          "<div class='img-container'>" +
+          "<img src=" + product.image + " alt='product' class='product-img'/>" +
+          "<button class='addCart' onclick='addCart(" + product.id + ")'>" +
+          "<i class='fas fa-shopping-cart'></i>" +
+          "AJOUTER AU PANIER" +
+          "</button>" +
+          "</div>" +
+          "<h3><i class='fas fa-train'></i> " + product.title + "</h3>" +
+          "<h4>" + product.price + "€</h4>" +
+          "</article>";
+      }
+
+      // div est vide on la remplit avec le html
+      productsDOM.innerHTML = result;
+    };
+
+    loadArticle();
+    function flechetop() {
+      window.scrollTo(0, 0);
+    }
+  </script>
+  <footeur>
+  <div id="fleche" onclick="flechetop()">
+    <img class="libellule" src="./images/share.PNG" alt="Veuillez cliquer, svp">
+  </div>
+  <p class="footer">Copyright 2022 <a href="./Contact.html">Tati Chouteau</a> - Merci à OpenClassRoom / <span
+      class="v">OpenClassRoom</span></p>
+    </footeur>
+</body>
+
+</html>
