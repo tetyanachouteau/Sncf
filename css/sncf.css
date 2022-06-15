@@ -1,7 +1,10 @@
+.topmenu {
+  background-color: #d0d6da;
+}
 .menu {
     display: flex;                /* Transformation en flexbox */
     padding:0;                    /* Suppression des marges internes */
-    background-color: #ccc;       /* Ajout de la couleur d'arrière-plan */
+         /* Ajout de la couleur d'arrière-plan */
     justify-content: space-around;/* Alignements des liens dans le menu */
 }
 .menu li {
@@ -36,15 +39,15 @@
 }
 
 header{
-    background-color: #bbbec1;
+ 
     color: #47108a;
     border-color: #720606;
     padding: 0.2em;
-}
+    }
 .annonce{
   text-align: center;
   }
-.libellule {
+.orange {
     width: 60px;
     height: 60px;
     box-shadow: none;
@@ -287,4 +290,21 @@ header{
   .v {
     color: rgb(32, 0, 128);
 
+  }
+
+  .buisness
+  {
+      width: 500px;
+      padding: 0.2em;
+      text-align: left;
+      margin-left:2em;
+      margin-bottom: 2em;
+  }
+  
+  section{
+    display:flex;
+  }
+
+  strong{
+    color:#b62626;
   }
