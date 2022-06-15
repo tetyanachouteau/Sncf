@@ -3,65 +3,80 @@
 
 <head>
   <meta charset="UTF-8" />
-   <link rel="stylesheet" href="./css/sncf.css" />
+  <link rel="stylesheet" href="./css/sncf.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <title>SNCF</title>
 </head>
 
 <body>
-<header>
-  <nav>    
-    <ul class="menu">
-        <li><p class="bordeau"><a href="#"><img onClick="myFunction('s2')" id="s2" 
-          class="logo" src="./images/sncf.png" alt="Veuillez cliquer, svp"></a></li>
+  <header>
+    <nav>
+      <ul class="menu">
+        <li>
+          <p class="bordeau"><a href="#"><img onClick="myFunction('s2')" id="s2" class="logo" src="./images/sncf2.png"
+                alt="Veuillez cliquer, svp"></a>
+        </li>
 
-      
-        <li><p class="bordeau"><a href="#"><button onClick="myFunction('s1')" id="s1"
-          class="cadre">Laiser avis</button></a></p></li>
+        <li>
+          <p class="bordeau"><a href="#"><button onClick="myFunction('s1')" id="s1" class="cadre">Laiser
+                avis</button></a></p>
+        </li>
 
-        <li><p class="bordeau"><a href="#"><button onClick="myFunction('s2')" id="s2"
-          class="cadre">Nous contacter</button></a></p></li>
+        <li>
+          <p class="bordeau"><a href="#"><button onClick="myFunction('s2')" id="s2" class="cadre">Nous
+                contacter</button></a></p>
+        </li>
 
-        <li><p class="bordeau"><a href="#"><button onClick="myFunction('s2')" id="s2"
-           class="cadre">Nos nouvelles</button></a></p></li>
+        <li>
+          <p class="bordeau"><a href="#"><button onClick="myFunction('s2')" id="s2" class="cadre">Nos
+                nouvelles</button></a></p>
+        </li>
 
-       <li><a class="profile" href="#"><i class="fas fa-user"></i></a><i class="fas fa-cart-plus panier"
-        onclick="showCart()" id="cartCount">0</i></li>
+        <li>
+          <a class="profile" href="#"><i class="fas fa-user"></i></a>
+          <a class="panier" href="#"><i class="fas fa-cart-plus" onclick="showCart()" id="cartCount">0</i></a>
+        </li>
       </ul>
     </nav>
-    <div class="annonce"><h1>Bienvenue! Découvrez l'identité de notre marque.</h1> 
-      <p><strong>Parcourez aussi l'identité <em>SNCF</em> déclinée à travers différents supports.</strong></p>        
-   </div>
-          
-</header>
-    
-  <table>
-    <tr>
-      <td class="imgFond" colspan="2">
-        <div class="section">Nos destinations</div>
-      </td>
-    </tr>
-    <tr>
-      <td colspan="2">
-        <div class="products-center" id="products">
-        </div>
-      </td>
-    </tr>
-  </table>
+    <div class="annonce">
+      <p><strong>Bienvenue! Découvrez l'identité de notre marque. Parcourez aussi l'identité <em>SNCF</em> déclinée à
+          travers différents supports.</strong></p>
+    </div>
+  </header>
+  <section>
+
+  <ul class="bandeau">
+    <li class="imgFond" colspan="2">
+      <div class="section">Nos destinations</div>
+    </li>
+  </ul>
+  </section>
+  
+  <section>
+  <ul>
+    <li colspan="2">
+      <div class="products-center" id="products">
+      </div>
+    </li>
+  </ul>
+</section>
+
+
   <div class="cart" id="cart">
     <span class="closeCart" onclick="hideCart()">&times;</span>
     <ul id="cartItems" class="cartItems">
     </ul>
     <span class="total">TOTAL : <i class="fas fa-coins"></i> <span id="totalPrice">0</span>€</span>
   </div>
-  
+
   <footeur>
-  <div id="fleche" onclick="flechetop()">
-    <img class="libellule" src="./images/fleche.png" alt="Veuillez cliquer, svp">
-  </div>
-  <p class="footer">Copyright 2022 <a href="./Contact.html">Tati Chouteau</a> - Merci à OpenClassRooms / <span
-      class="v">OpenClassRooms</span></p>
- </footeur>
- <script src="./js/sncf.js"></script>
+    <div id="fleche" onclick="flechetop()">
+      <img class="libellule" src="./images/fleche.png" alt="Veuillez cliquer, svp">
+    </div>
+    <p class="footer">Copyright 2022 <a href="#">Tati Chouteau</a> - Merci à OpenClassRooms / <span
+        class="v">OpenClassRooms</span></p>
+  </footeur>
+  <script src="./js/sncf.js"></script>
 </body>
 
 </html>
