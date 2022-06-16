@@ -18,10 +18,10 @@
     margin: 0.5rem;               /* Marges externes */
     padding: 0.4rem 0;            /* Marges internes */
     text-align: center;           /* Centrage du texte */   
-    background-color: #301885;    /* Arrière-plan */
-    color: #fff;                  /* Couleur du texte */
+    background-color: #faf6f6;    /* Arrière-plan */
+    color: rgb(180, 54, 54);                  /* Couleur du texte */
     text-decoration: none;        /* Suppression du soulignement */
-    border: 1px solid #fff;       /* Ajout d'une bordure */
+    border: 1px solid rgb(175, 68, 68);       /* Ajout d'une bordure */
     border-radius: 4px;           /* Arrondis des bordures */
     
     transition: all 1s ;          /* Ajout des effets de transition */
@@ -29,12 +29,12 @@
 .menu a.actif {    
     background-color: #000 ; 
     color: #551abc ;
-    border-color: #1ABC9C ;
+    border-color: #4b2443 ;
 }
 .menu a:hover,
 .menu a:hover.actif{
-    background-color: #ed8727;
-    color: #ffe843;
+    background-color: #3427ed;
+    color: #861616;
     border-color: #720606;
 }
 
@@ -42,7 +42,7 @@ header{
  
     color: #47108a;
     border-color: #720606;
-    padding: 0.2em;
+    padding: 0.1em;
     }
 .annonce{
   text-align: center;
@@ -81,7 +81,7 @@ header{
     list-style-type: none ; 
   }
 
-  td.titre {
+  li.titre {
     background-color: blueviolet;
     border-radius: 5px;
     color: white;
@@ -240,14 +240,14 @@ header{
 
   }
 
-  td.profile {
+  li.profile {
     vertical-align: top;
     padding-right: 14px;
     font-size: 30px;
     padding-top: 14px;
   }
 
-  td.profile a {
+  li.profile a {
     color: rgb(62, 10, 160);
   }
 
@@ -300,7 +300,7 @@ header{
       margin-left:2em;
       margin-bottom: 2em;
   }
-  
+    
   section{
     display:flex;
   }
