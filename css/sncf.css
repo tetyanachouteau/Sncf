@@ -274,7 +274,7 @@ header{
   }
 
   .logo {
-    height: 44px;
+    height: 54px;
     background-color: rgb(55, 0, 128);
   }
 
@@ -296,7 +296,7 @@ header{
   {
       width: 500px;
       padding: 0.2em;
-      text-align: left;
+     
       margin-left:2em;
       margin-bottom: 2em;
   }
@@ -318,4 +318,42 @@ header{
     margin-bottom: 2em;
   }
 
+  article, aside
+{
+    text-align: justify;
+}
+
+
+article
+{
+    margin-right: 20px;
+    flex: 3;
+    text-align: left;
+}
+.affaires{
+  height: 350px;
+  background-color: rgb(199, 38, 38);
+    
+  margin-left:2em;
+  margin-bottom: 2em;
+}
+.cadre{
+
+  border: 1px solid rgb(175, 68, 68);
+  background-color: rgb(216, 29, 29);
+  list-style-type: none;
+  margin-top: 60px;
+}
+
+img.pub {
+  width: 540px;
+  height: 230px;
+  vertical-align: middle;  
+  padding: 0.2em; 
+  margin-left:2em;
+  margin-right: 5px;
+  margin-bottom: 2em;
+  border: 1px solid rgb(175, 68, 68);
   
+
+}
