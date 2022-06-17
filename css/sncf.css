@@ -301,9 +301,17 @@ header{
       margin-bottom: 2em;
   }
     
-  section{
-    display:flex;
+  .unique{
+    width: 500px;
+    padding: 0.2em;
+   
+    margin-left:2em;
+    margin-bottom: 2em;
+
+   
   }
+
+  
 
   strong{
     color:#b62626;
@@ -371,4 +379,8 @@ img.pub {
   border: 1px solid rgb(175, 68, 68);
   
 
+}
+.form-example{
+  width: 300px;
+  height: 500px;
 }
