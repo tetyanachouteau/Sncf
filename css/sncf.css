@@ -322,11 +322,17 @@ header{
 {
     text-align: justify;
 }
+aside{
+  height: 350px;
+  margin-left:2em;
+  margin-bottom: 2em;
+}
 
+article { 
+  height: 350px;
 
-article
-{
     margin-right: 20px;
+    margin-left:2em;
     flex: 3;
     text-align: left;
 }
@@ -337,21 +343,30 @@ article
   margin-left:2em;
   margin-bottom: 2em;
 }
-.cadre{
+ul.cadre{
 
   border: 1px solid rgb(175, 68, 68);
   background-color: rgb(216, 29, 29);
   list-style-type: none;
-  margin-top: 60px;
+  margin-top: 12px;
+
+  height: 350px;
+
+    margin-right: 12px;
+    margin-left:  12px;;
+    flex: 3;
+    text-align: justify;
 }
 
 img.pub {
-  width: 540px;
+  width: 280px;
   height: 230px;
   vertical-align: middle;  
   padding: 0.2em; 
   margin-left:2em;
-  margin-right: 5px;
+  margin-right: 2em;
+  margin-bottom: 2em;
+  margin-top: 2em;
   margin-bottom: 2em;
   border: 1px solid rgb(175, 68, 68);
   
