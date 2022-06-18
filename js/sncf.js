@@ -1,4 +1,3 @@
-
 const productsDOM = document.getElementById("products");
 const cartCountDOM = document.getElementById("cartCount");
 const cartItemsDOM = document.getElementById("cartItems");
