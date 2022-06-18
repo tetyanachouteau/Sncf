@@ -145,8 +145,7 @@ header{
 
   .addCart {
     position: relative;
-    top: 70%;
-    right: 0;
+      right: 0;
     background: #d8318d;
     border: none;
     font-weight: bold;
@@ -272,7 +271,13 @@ header{
   p.bordeau {
     color: #990033;
   }
-
+.fond{
+  background-color: #b62626;
+  max-width: 225px;
+  padding-left: 2em;
+  padding-right: 2em;
+  margin-top: 1em;
+}
   .logo {
     height: 54px;
     background-color: rgb(55, 0, 128);
@@ -294,12 +299,12 @@ header{
 
   .buisness
   {
-      width: 500px;
+      min-width: 400px;
       padding: 0.2em;
      
       margin-left:2em;
       margin-bottom: 2em;
-  }
+        }
     
   .unique{
     width: 500px;
@@ -319,25 +324,20 @@ header{
 
   
   .bvoyage{
-    height: 350px;
-    background-color: rgb(199, 38, 38);
-      
-    margin-left:2em;
-    margin-bottom: 2em;
-  }
+    max-width: 400px;   
+      }
 
   article, aside
 {
-    text-align: justify;
+    text-align: left;
 }
 aside{
-  height: 350px;
   margin-left:2em;
   margin-bottom: 2em;
 }
 
 article { 
-  height: 350px;
+  
 
     margin-right: 20px;
     margin-left:2em;
@@ -345,37 +345,19 @@ article {
     text-align: left;
 }
 .affaires{
-  height: 350px;
+ 
   background-color: rgb(199, 38, 38);
     
   margin-left:2em;
   margin-bottom: 2em;
 }
-ul.cadre{
 
-  border: 1px solid rgb(175, 68, 68);
-  background-color: rgb(216, 29, 29);
-  list-style-type: none;
-  margin-top: 12px;
-
-  height: 350px;
-
-    margin-right: 12px;
-    margin-left:  12px;;
-    flex: 3;
-    text-align: justify;
-}
 
 img.pub {
-  width: 280px;
-  height: 230px;
-  vertical-align: middle;  
-  padding: 0.2em; 
-  margin-left:2em;
-  margin-right: 2em;
-  margin-bottom: 2em;
-  margin-top: 2em;
-  margin-bottom: 2em;
+  width: 60%;
+  
+   margin-left:auto;
+  margin-right: auto;
   border: 1px solid rgb(175, 68, 68);
   
 
@@ -383,4 +365,8 @@ img.pub {
 .form-example{
   width: 300px;
   height: 500px;
+}
+.lux{
+  display:flex;
+  flex-direction: row;
 }
