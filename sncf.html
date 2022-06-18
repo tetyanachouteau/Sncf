@@ -82,34 +82,30 @@
         tout en réduisant votre empreinte carbone.</p>
     </article>
 
-    
-      <aside >
-        <p ><a href="#"><img onClick="myFunction('s2')" id="s2" class="bvoyage"
-              src="./images/business.jpg" alt="Veuillez cliquer, svp"></a></p>
-      </aside>
 
-      <aside class="fond">
-          <h4 class="promo">Voyage d'affaires<br>PRIX UNIQUE-500 €</h4>
-          <img class="pub" onClick="myFunction('s2')" id="s2" class="affaires"
-                src="./images/deal.png" alt="Veuillez cliquer, svp">
-          <h3><i class='fas fa-train'></i> Choisir destination</h3>
-          <button class="addCart" onClick="myFunction('s2')" id="s2">
-                <i class='fas fa-shopping-cart'></i>AJOUTER AU PANIER
-              </button>       
-      </aside>
-    
+    <aside class="imgaside">
+      <img onClick="myFunction('s2')" id="s2" class="bvoyage" src="./images/business.jpg" alt="Veuillez cliquer, svp">
+    </aside>
+
+    <aside class="fond">
+      <h4 class="promo">Voyage d'affaires<br><br>PRIX UNIQUE - 500 €</h4>
+      <img class="pub" onClick="myFunction('s2')" id="s2" class="affaires" src="./images/deal.png"
+        alt="Veuillez cliquer, svp">
+      <h3><i class='fas fa-train'></i>&nbsp;<select id="dest">
+        <option value="C" disabled selected>Choisir destinations</option>
+        <option value="Paris">Paris</option>
+        <option value="Lille">Lille</option>
+      </select></h3>
+      <button class="addCart" onClick="addCart(99999)" id="s2">
+        <i class='fas fa-shopping-cart'></i>AJOUTER AU PANIER
+      </button>
+    </aside>
+
   </section>
 
-  <div>
-    <aside>
-      <ul>
-        <li colspan="2">
-          <div class="products-center" id="products">
-          </div>
-        </li>
-      </ul>
-    </aside>
-  </div>
+  
+          <div class="products-center" id="products"></div>
+
 
 
   <div class="cart" id="cart">
@@ -123,8 +119,7 @@
     <div id="fleche" onclick="flechetop()">
       <img class="orange" src="./images/fleche.png" alt="Veuillez cliquer, svp">
     </div>
-    <p class="footer">Copyright 2022 <a href="#">Tati Chouteau</a> - Merci à OpenClassRooms / <span
-        class="v">OpenClassRooms</span></p>
+    <p class="footer">Copyright 2022 <a href="#">Tati Chouteau</a> - Merci à OpenClassRooms</p>
   </footeur>
   <script src="./js/sncf.js"></script>
 </body>

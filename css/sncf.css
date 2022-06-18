@@ -1,372 +1,407 @@
 .topmenu {
   background-color: #d0d6da;
 }
+
 .menu {
-    display: flex;                /* Transformation en flexbox */
-    padding:0;                    /* Suppression des marges internes */
-         /* Ajout de la couleur d'arrière-plan */
-    justify-content: space-around;/* Alignements des liens dans le menu */
+  display: flex;
+  /* Transformation en flexbox */
+  padding: 0;
+  /* Suppression des marges internes */
+  /* Ajout de la couleur d'arrière-plan */
+  justify-content: space-around;
+  /* Alignements des liens dans le menu */
 }
+
 .menu li {
-    list-style-type: none ;       /* Suppression des puces */
-  
+  list-style-type: none;
+  /* Suppression des puces */
+
 }
+
 .menu a {
-    display:block;                /* Transformation en block */
-    min-width: 120px;             /* Largeur minimale des liens */   
-    
-    margin: 0.5rem;               /* Marges externes */
-    padding: 0.4rem 0;            /* Marges internes */
-    text-align: center;           /* Centrage du texte */   
-    background-color: #faf6f6;    /* Arrière-plan */
-    color: rgb(180, 54, 54);                  /* Couleur du texte */
-    text-decoration: none;        /* Suppression du soulignement */
-    border: 1px solid rgb(175, 68, 68);       /* Ajout d'une bordure */
-    border-radius: 4px;           /* Arrondis des bordures */
-    
-    transition: all 1s ;          /* Ajout des effets de transition */
-}
-.menu a.actif {    
-    background-color: #000 ; 
-    color: #551abc ;
-    border-color: #4b2443 ;
-}
-.menu a:hover,
-.menu a:hover.actif{
-    background-color: #3427ed;
-    color: #861616;
-    border-color: #720606;
-}
+  display: block;
+  /* Transformation en block */
+  min-width: 120px;
+  /* Largeur minimale des liens */
 
-header{
- 
-    color: #47108a;
-    border-color: #720606;
-    padding: 0.1em;
-    }
-.annonce{
+  margin: 0.5rem;
+  /* Marges externes */
+  padding: 0.4rem 0;
+  /* Marges internes */
   text-align: center;
-  }
+  /* Centrage du texte */
+  background-color: #faf6f6;
+  /* Arrière-plan */
+  color: rgb(180, 54, 54);
+  /* Couleur du texte */
+  text-decoration: none;
+  /* Suppression du soulignement */
+  border: 1px solid rgb(175, 68, 68);
+  /* Ajout d'une bordure */
+  border-radius: 4px;
+  /* Arrondis des bordures */
+
+  transition: all 1s;
+  /* Ajout des effets de transition */
+}
+
+.menu a.actif {
+  background-color: #000;
+  color: #551abc;
+  border-color: #4b2443;
+}
+
+.menu a:hover,
+.menu a:hover.actif {
+  background-color: #3427ed;
+  color: #861616;
+  border-color: #720606;
+}
+
+header {
+
+  color: #47108a;
+  border-color: #720606;
+  padding: 0.1em;
+}
+
+.annonce {
+  text-align: center;
+}
+
 .orange {
-    width: 60px;
-    height: 60px;
-    box-shadow: none;
-  }
+  width: 60px;
+  height: 60px;
+  box-shadow: none;
+}
 
-  #fleche {
-    position: fixed;
-    cursor: pointer;
-    z-index: 9999;
-    opacity: 0.8;
-    right: 20px;
-    bottom: 20px;
-    display: block;
-  }
+#fleche {
+  position: fixed;
+  cursor: pointer;
+  z-index: 9999;
+  opacity: 0.8;
+  right: 20px;
+  bottom: 20px;
+  display: block;
+}
 
-  body {
-    color: black;
-    background: white;
-    margin: 0;
-    padding: 0;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    padding-bottom: 60px;
-    max-width: 1600px;
-  }
+body {
+  color: black;
+  background: white;
+  margin: 0;
+  padding: 0;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  padding-bottom: 60px;
+  max-width: 1600px;
+}
 
-  li.bandeau {
-    height: 60px;
-    width: 100%;
-    position: fixed;
-    z-index: 1;
-    list-style-type: none ; 
-  }
+li.bandeau {
+  height: 60px;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  list-style-type: none;
+}
 
-  li.titre {
-    background-color: blueviolet;
-    border-radius: 5px;
-    color: white;
-    font-size: 56px;
-    text-align: center;
-    width: 100%;
-  }
+li.titre {
+  background-color: blueviolet;
+  border-radius: 5px;
+  color: white;
+  font-size: 56px;
+  text-align: center;
+  width: 100%;
+}
 
-  i.panier {
-    text-align: center;
-    background: #d8318d;
-    border-radius: 5px;
-    color: white;
-    padding: 5px;
-  }
+i.panier {
+  text-align: center;
+  background: #d8318d;
+  border-radius: 5px;
+  color: white;
+  padding: 5px;
+}
 
-  li.imgFond {
-    background-image: url("../images/tgv.jpeg");
-    background-size: cover;
-    background-position-y: center;
-    height: 150px;
-  }
+li.imgFond {
+  background-image: url("../images/tgv.jpeg");
+  background-size: cover;
+  background-position-y: center;
+  height: 150px;
+}
 
-  div.section {
-    text-align: center;
-    padding-top: 10px;
-    color: rgb(100, 32, 168);
-    background-color: white;
-    height: 50px;
-    font-size: 40px;
-    opacity: 0.8;
-  }
+div.section {
+  text-align: center;
+  padding-top: 10px;
+  color: rgb(100, 32, 168);
+  background-color: white;
+  height: 50px;
+  font-size: 40px;
+  opacity: 0.8;
+}
 
-  ul {
-    height: 100%;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-  }
+ul {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
 
-  /* Trouvé sur internet permet de faire automatiquement
+/* Trouvé sur internet permet de faire automatiquement
   un tableau de 3 cases et d'autant de ligne que nécessaire
   On a juste besoin d'avoir une balise <article> répértée
   Autant de fois qu'il y a des produits*/
-  .products-center {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 10px;
-  }
+.products-center {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+}
 
-  img.product-img {
-    width: 400px;
-    height: 250px;
-  }
+img.product-img {
+  width: 400px;
+  height: 250px;
+}
 
-  img.product-img-tiny {
-    width: 40px;
-    height: 25px;
-    vertical-align: middle;
-  }
+img.product-img-tiny {
+  width: 40px;
+  height: 25px;
+  vertical-align: middle;
+}
 
-  .addCart {
-    position: relative;
-      right: 0;
-    background: #d8318d;
-    border: none;
-    font-weight: bold;
-    cursor: pointer;
-    padding: 10px;
-  }
+.addCart {
+  position: relative;
+  right: 0;
+  background: #6174d2;
+  color: white;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 10px;
+}
 
-  .addCart:hover {
-    color: white;
-  }
+.addCart:hover {
+  color: white;
+}
 
-  div.cart {
-    height: 50%;
-    width: 70%;
-    visibility: hidden;
-    position: fixed;
-    z-index: 1;
-    right: 0;
-    top: 0;
-    background-color: white;
-    opacity: 0.9;
-    margin-top: 40px;
-  }
+div.cart {
+  height: 50%;
+  width: 70%;
+  visibility: hidden;
+  position: fixed;
+  z-index: 1;
+  right: 0;
+  top: 0;
+  background-color: white;
+  opacity: 0.9;
+  margin-top: 40px;
+}
 
-  span.closeCart {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    font-size: 30px;
-    color: violet;
-    cursor: pointer;
-    height: 50px;
-  }
+span.closeCart {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 30px;
+  color: violet;
+  cursor: pointer;
+  height: 50px;
+}
 
-  ul.cartItems {
-    list-style-type: none;
-    margin-top: 60px;
-  }
+ul.cartItems {
+  list-style-type: none;
+  margin-top: 60px;
+}
 
-  span.price {
-    position: absolute;
-    right: 80px;
-    font-size: 20px;
-    ;
-  }
+span.price {
+  position: absolute;
+  right: 80px;
+  font-size: 20px;
+  ;
+}
 
-  span.product-trash {
-    position: absolute;
-    right: 45px;
-  }
+span.product-trash {
+  position: absolute;
+  right: 45px;
+}
 
-  span.total {
-    position: absolute;
-    right: 40px;
-    font-size: 2em;
-    color: darkgoldenrod;
-  }
+span.total {
+  position: absolute;
+  right: 40px;
+  font-size: 2em;
+  color: darkgoldenrod;
+}
 
-  span.arrow {
-    position: absolute;
-    right: 200px;
-  }
+span.arrow {
+  position: absolute;
+  right: 200px;
+}
 
-  logo {
-    height: 40%;
-    width: 60%;
-    visibility: hidden;
-    position: fixed;
-    z-index: 1;
-    right: 0;
-    top: 0;
-    background-color: rgb(54, 23, 139);
-    opacity: 0.9;
-    
-  }
-  logo:hover {
-    background-color: rgb(55, 0, 128);
-    color: white;
-  }
-  p.footer {
-    position: fixed;
-    bottom: 0px;
-    width: 100%;
-    color: #990033;
-    font-weight: bold;
-    background-color: rgb(247, 247, 247);
-    margin: 0;
-    padding-bottom: 10px;
-    padding-top: 10px;
-    text-align: center;
+logo {
+  height: 40%;
+  width: 60%;
+  visibility: hidden;
+  position: fixed;
+  z-index: 1;
+  right: 0;
+  top: 0;
+  background-color: rgb(54, 23, 139);
+  opacity: 0.9;
 
-  }
+}
 
-  li.profile {
-    vertical-align: top;
-    padding-right: 14px;
-    font-size: 30px;
-    padding-top: 14px;
-  }
+logo:hover {
+  background-color: rgb(55, 0, 128);
+  color: white;
+}
 
-  li.profile a {
-    color: rgb(62, 10, 160);
-  }
+p.footer {
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  color: #990033;
+  font-weight: bold;
+  background-color: rgb(247, 247, 247);
+  margin: 0;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  text-align: center;
 
-  .tdButton {
-    width: 100%;
-    text-align: none;
-  }
+}
 
-  button {
-    border-radius: 0%;
-    height: 36px;
-    width: 200px;
-    color: rgb(74, 14, 177);
-    font-weight: bold;
-    }
+li.profile {
+  vertical-align: top;
+  padding-right: 14px;
+  font-size: 30px;
+  padding-top: 14px;
+}
 
-  button:hover {
-    background-color: rgb(55, 0, 128);
-    color: white;
-  }
+li.profile a {
+  color: rgb(62, 10, 160);
+}
 
-  p.bordeau {
-    color: #990033;
-  }
-.fond{
+.tdButton {
+  width: 100%;
+  text-align: none;
+}
+
+button {
+  border-radius: 0%;
+  height: 36px;
+  width: 200px;
+  color:rgb(233, 75, 75);
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: rgb(55, 0, 128);
+  color: white;
+}
+
+p.bordeau {
+  color: #990033;
+}
+
+.fond {
   background-color: #b62626;
   max-width: 225px;
+  color: wheat;
+  border-radius: 2em;
+  text-align: center;
+  margin-right: 2em;
+}
+
+.logo {
+  height: 54px;
+  background-color: rgb(55, 0, 128);
+}
+
+span.bold {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+span.left {
+  margin-left: 20px;
+}
+
+.v {
+  color: rgb(32, 0, 128);
+
+}
+
+.buisness {
+  min-width: 400px;
+  padding: 0.2em;
+
+  margin-left: 2em;
+  margin-bottom: 2em;
+}
+
+.unique {
+  width: 500px;
+  padding: 0.2em;
+
+  margin-left: 2em;
+  margin-bottom: 2em;
+
+
+}
+
+
+
+strong {
+  color: #b62626;
+}
+
+
+.bvoyage {
+  max-width: 424px;
+}
+
+article,
+aside {
+  text-align: left;
+}
+
+.imgaside {
+  display: flex;
+}
+
+aside {
+  margin-left: 2em;
+  margin-bottom: 2em;
   padding-left: 2em;
   padding-right: 2em;
   margin-top: 1em;
 }
-  .logo {
-    height: 54px;
-    background-color: rgb(55, 0, 128);
-  }
 
-  span.bold {
-    font-weight: bold;
-    font-size: 20px;
-  }
+article {
 
-  span.left {
-    margin-left: 20px;
-  }
 
-  .v {
-    color: rgb(32, 0, 128);
-
-  }
-
-  .buisness
-  {
-      min-width: 400px;
-      padding: 0.2em;
-     
-      margin-left:2em;
-      margin-bottom: 2em;
-        }
-    
-  .unique{
-    width: 500px;
-    padding: 0.2em;
-   
-    margin-left:2em;
-    margin-bottom: 2em;
-
-   
-  }
-
-  
-
-  strong{
-    color:#b62626;
-  }
-
-  
-  .bvoyage{
-    max-width: 400px;   
-      }
-
-  article, aside
-{
-    text-align: left;
-}
-aside{
-  margin-left:2em;
-  margin-bottom: 2em;
+  margin-right: 20px;
+  margin-left: 2em;
+  flex: 3;
+  text-align: left;
 }
 
-article { 
-  
+.affaires {
 
-    margin-right: 20px;
-    margin-left:2em;
-    flex: 3;
-    text-align: left;
-}
-.affaires{
- 
   background-color: rgb(199, 38, 38);
-    
-  margin-left:2em;
+
+  margin-left: 2em;
   margin-bottom: 2em;
 }
 
 
 img.pub {
-  width: 60%;
-  
-   margin-left:auto;
-  margin-right: auto;
+  width: 84%;
   border: 1px solid rgb(175, 68, 68);
-  
+
 
 }
-.form-example{
+
+.form-example {
   width: 300px;
   height: 500px;
 }
-.lux{
-  display:flex;
+
+.lux {
+  display: flex;
   flex-direction: row;
 }

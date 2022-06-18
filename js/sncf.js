@@ -117,6 +117,22 @@ function computeCart() {
         }
     }
 
+    // Promo spécial affaire
+    if(cart[99999]){
+        total += cart[99999] * 500
+        // HTML en string pour l'ajouter après à la div avec css grid pour que ca s'affiche
+        ligne += "<article>" +
+        "<img src='./images/deal.png' alt='product' class='product-img-tiny'/>" +
+        "<span>" + cart[99999] + " Spécial Affaire" + "</span>" +
+        "<span> à 500€</span>" +
+        "<span class='arrow'><i class='fas fa-arrow-circle-right'></i></span>" +
+        "<span class='price'>500€</span>" +
+        "<span class='product-trash' onclick='deleteTodo(99999)'>" +
+        "  <i class='fas fa-trash-alt'></i>" +
+        "</span>" +
+        "</article>";
+    }
+
     cartItemsDOM.innerHTML = ligne;
     totalPriceDOM.innerText = Math.floor(total * 100) / 100;
 }
