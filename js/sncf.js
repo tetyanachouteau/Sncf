@@ -1,3 +1,4 @@
+//document=.html, Dom en memoire, id="product"
 const productsDOM = document.getElementById("products");
 const cartCountDOM = document.getElementById("cartCount");
 const cartItemsDOM = document.getElementById("cartItems");
@@ -6,6 +7,7 @@ const totalPriceDOM = document.getElementById("totalPrice");
 //Json de produits
 // decription d'objet
 // sous forme de clé valeur
+//propriétés
 const products = {
     "items": [{
         "id": "1",
@@ -64,7 +66,7 @@ const products = {
     ]
 };
 
-// tableau qui stocke le nombre de produit.id dans le panier
+// tableau qui stocke le nombre de produit.id dans le panier , ++
 let cart = [];
 
 function addCart(id) {
@@ -85,7 +87,7 @@ function computeCart() {
     }
 
     cartCountDOM.textContent = count;
-
+    //=html
     var ligne = "";
     var total = 0;
 
@@ -93,6 +95,7 @@ function computeCart() {
     // on récupé les indices du tableau items avec in
     // c'est comme un for (i=0,...)
     // productIndice est un numéro
+    //products c'est json
     for (productIndice in products.items) {
         product = products.items[productIndice];
         // cart = panier
@@ -102,7 +105,7 @@ function computeCart() {
             var prixItem = Math.floor(product.price * cart[product.id] * 100) / 100;
             total += prixItem;
 
-            // HTML en string pour l'ajouter après à la div avec css grid pour que ca s'affiche
+            // HTML panier en string pour l'ajouter après à la div avec css grid pour que ca s'affiche
             ligne += "<article>" +
                 "<img src='" + product.image + "' alt='product' class='product-img-tiny'/>" +
                 "<span>" + cart[product.id] + " " + product.title + "</span>" +
@@ -131,7 +134,7 @@ function computeCart() {
         "</span>" +
         "</article>";
     }
-
+//panier, div
     cartItemsDOM.innerHTML = ligne;
     totalPriceDOM.innerText = Math.floor(total * 100) / 100;
 }
@@ -147,11 +150,12 @@ function showCart() {
     cart.style.visibility = "visible";
 }
 
+//visibilité 0
 function hideCart() {
     var cart = document.getElementById("cart");
     cart.style.visibility = "hidden";
 }
-
+//hors panier
 function loadArticle() {
     var result = "";
     for (productIndice in products.items) {
