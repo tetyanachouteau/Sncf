@@ -71,8 +71,10 @@ let cart = [];
 
 function addCart(id) {
     if (cart[id]) {
-        cart[id]++;
+        cart[id]= cart[id] + 1;
     } else {
+        // si pas présent dans le panier, je crée une nouvelle entrée pour le produit 
+        // dans le panier et je dis qu'il n'existe qu'a 1 exemplaire
         cart[id] = 1;
     }
 
@@ -81,8 +83,8 @@ function addCart(id) {
 
 function computeCart() {
     var count = 0;
-
-    for (id in cart) {
+//cart cest variable qui contient un panier par id
+    for (id in cart) { 
         count += cart[id];
     }
 
@@ -92,7 +94,7 @@ function computeCart() {
     var total = 0;
 
     // parcours du json
-    // on récupé les indices du tableau items avec in
+    // on récupé les indices du tableau items/elements avec in
     // c'est comme un for (i=0,...)
     // productIndice est un numéro
     //products c'est json

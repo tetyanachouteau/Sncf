@@ -31,6 +31,7 @@
 
           <li>
             <a href="#"><i class="fas fa-user"></i></a>
+            <!--mettre à jour qté de billets dans panier-->
             <a href="#"><i class="fas fa-cart-plus" onclick="showCart()" id="cartCount">0</i></a>
           </li>
         </ul>
@@ -92,13 +93,19 @@
     </aside>
 
   </section>
-
+<!--en dur et en dynamique aprés,js"loadArticles". 
+la div cart ne va pas s'affiche en dessous de la div products 
+car dans le css cart on lui dit tu l'affcihe en haut à droit 
+(absolue right :20 / top : 0)-->
   <div class="products-center" id="products"></div>
 
   <div class="cart" id="cart">
+    <!--cacher le panier-->
     <span class="closeCart" onclick="hideCart()">&times;</span>
+    <!--les élements du panier dans le maniere dynamique-->
     <ul id="cartItems" class="cartItems">
     </ul>
+    <!--dans totalPrice on va mettre à jour dynamiquement le calcul du total des produits du panier-->
     <span class="total">TOTAL : <i class="fas fa-coins"></i> <span id="totalPrice">0</span>€</span>
   </div>
 
